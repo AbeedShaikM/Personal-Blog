@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const ejs = require("ejs");
 const lodash = require("lodash");
+const PORT = process.env.PORT || 3000;
 const mongoose=require("mongoose");
 mongoose.set('strictQuery',false);
 mongoose.connect("mongodb+srv://Abeed:2101072@cluster0.ta0otmm.mongodb.net/blogs",{useNewUrlParser:true})
@@ -93,5 +94,4 @@ app.get("/:postTitle", function (req, res) {
         })
     }
 })
-Blog.deleteMany({title:"Abeed"});
-app.listen(3000, function (request, response) { })
+app.listen(PORT, function (request, response) { })
