@@ -1,0 +1,19 @@
+<%- include("partials/header") -%>
+    <h1>
+        <%=heading%>
+    </h1>
+    <p>
+        <%= last_journal%>.
+    </p>
+    <form action="/compose" method="post">
+        <div class="form-group">
+            <label for="usr">Title:</label>
+            <input type="text" class="form-control" id="usr" name="heading" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="comment">Post:</label>
+            <textarea class="form-control" rows="3" id="comment" name="post" autocomplete="off"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" name="button">Publish the Post</button>
+    </form>
+<%- include("partials/footer") -%>
