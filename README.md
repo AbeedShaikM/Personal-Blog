@@ -30,10 +30,8 @@ Ensure that you have the following installed on your local development machine:
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/yourusername/yourrepository.git
+    git clone https://github.com/AbeedShaikM/Personal-Blog.git
     ```
-
-    Replace `yourusername` and `yourrepository` with your GitHub username and repository name.
 
 2. Navigate to the project directory:
 
