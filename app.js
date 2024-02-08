@@ -11,11 +11,6 @@ const blogModel=new mongoose.Schema({
     postContent:String
 })
 const Blog=mongoose.model("Blog",blogModel);
-// const blog1=new Blog({
-//     title:"abeed",
-//     content:"IIT"
-// })
-// blog1.save();
 app.set("view engine", "ejs");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -37,8 +32,8 @@ else{
 })
 
 const p1 = "Here goes your Journals."
-const p2 = "This is a daily journal of Mr.Abeed.He is currently doing his B.Tech in C.S.E department from IIT bhubaneswar";
-const p3 = "Contact us at phone-7569177013 or email us at mullaabeed@gmail.com"
+const p2 = "";
+const p3 = "Contact me at phone-7569177013 or email me at mullaabeed@gmail.com"
 app.get("/", function (req, res) {
     res.render("index", {
         heading: "Home",
@@ -48,8 +43,6 @@ app.get("/", function (req, res) {
 })
 app.get("/about", function (req, res) {
     res.render("about", {
-        heading: "About",
-        p1: p2,
     })
 })
 app.get("/contact", function (req, res) {
@@ -57,6 +50,7 @@ app.get("/contact", function (req, res) {
         heading: "Contact",
         contact_1: "Phone-7569177013",
         contact_2: "Mail-mullaabeed2004@gmail.com",
+        contact_3: "Mail-21CS01072@iitbbs.ac.in",
     })
 })
 app.get("/compose", function (req, res) {
@@ -77,6 +71,21 @@ app.post("/compose", function (req, res) {
     post.save();
     res.redirect("/");
 })
+
+app.post("/delete/:postTitle", function (req, res) {
+    const reqTitle = lodash.lowerCase(req.params.postTitle);
+    let index = posts.findIndex(post => lodash.lowerCase(post.title) === reqTitle);
+    if (index !== -1) {
+        posts.splice(index, 1);
+    }
+    Blog.deleteOne({ title: reqTitle }, function(err){
+        if(!err){
+            res.redirect("/");
+        }else{
+            res.send(err);
+        }
+    });
+});
 app.get("/:postTitle", function (req, res) {
     const reqTitle=lodash.lowerCase(req.params.postTitle);
     let i=0;
@@ -92,6 +101,9 @@ app.get("/:postTitle", function (req, res) {
             title:posts[j].title,
             post_content:posts[j].postContent
         })
+    }
+    else{
+        res.render("/");
     }
 })
 app.listen(PORT, function (request, response) { })

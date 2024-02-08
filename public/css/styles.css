@@ -35,4 +35,58 @@ html {
       }
   }
   
+  .button-container {
+    text-align: right;
+}
 
+.delete-button {
+    display: inline-block;
+    margin-top: 20px;
+    /*adjustasneeded*/background-color: #474545;
+    /*greyishblack*/color: rgb(253, 253, 253);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #6b6666; /* slightly lighter grey for hover effect */
+}
+
+.about-me {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.about-me h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-me ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.social-links i {
+  margin-right: 5px;
+}
