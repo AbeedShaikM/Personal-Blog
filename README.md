@@ -36,10 +36,8 @@ Ensure that you have the following installed on your local development machine:
 2. Navigate to the project directory:
 
     ```bash
-    cd yourrepository
+    cd Personal-Blog
     ```
-
-    Replace `yourrepository` with your repository name.
 
 3. Install the project dependencies:
 
