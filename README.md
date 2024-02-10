@@ -2,10 +2,6 @@
 
 This repository contains the code for my personal blog website. The website is built using Express.js, MongoDB Atlas, HTML, and CSS.
 
-## Live Demo
-
-You can view the live demo of the website at [https://personal-blogs-3hyo.onrender.com](https://personal-blogs-3hyo.onrender.com).
-
 ## Technologies Used
 
 - **Express.js**: A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
